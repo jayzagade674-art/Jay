@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Scene Relay is a quick creative decision game." />
+    <title>Scene Relay — Make the Moment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="Scene Relay home">SCENE<span>RELAY</span></a>
+        <div class="run-stats" aria-label="Game status">
+          <span id="round-label">REHEARSAL 01 / 05</span>
+          <span class="divider">•</span>
+          <span id="streak-label">ON A ROLL ×0</span>
+        </div>
+      </header>
+
+      <section class="stage" aria-labelledby="game-title">
+        <div class="spotlight spotlight-left"></div>
+        <div class="spotlight spotlight-right"></div>
+        <div class="curtain curtain-left"></div>
+        <div class="curtain curtain-right"></div>
+
+        <div class="stage-content">
+          <p class="eyebrow">A FIVE-BEAT IMPROV GAME</p>
+          <h1 id="game-title">Make the<br /><em>moment land.</em></h1>
+          <p class="intro" id="intro-copy">
+            Pick the beat that keeps the scene moving. Trust your instinct—then
+            see if the room agrees.
+          </p>
+          <button class="primary-button" id="start-button" type="button">Start the relay <span>→</span></button>
+
+          <section class="game-panel is-hidden" id="game-panel" aria-live="polite">
+            <div class="scene-meta">
+              <span id="scene-location">BACKSTAGE / 10 MINUTES TO CURTAIN</span>
+              <span id="scene-type">COMEDY</span>
+            </div>
+            <p class="scene-line" id="scene-line"></p>
+            <p class="prompt" id="prompt">What do you do next?</p>
+            <div class="choices" id="choices" role="group" aria-label="Choose the next beat"></div>
+            <p class="feedback" id="feedback" aria-live="polite"></p>
+          </section>
+        </div>
+      </section>
+
+      <footer class="scoreboard">
+        <div class="meter-group">
+          <div class="meter-label"><span>ROOM ENERGY</span><strong id="energy-value">50</strong></div>
+          <div class="meter" aria-label="Room energy"><div class="meter-fill energy-fill" id="energy-fill"></div></div>
+        </div>
+        <div class="meter-group">
+          <div class="meter-label"><span>YOUR SCORE</span><strong id="score-value">000</strong></div>
+          <div class="meter" aria-label="Score progress"><div class="meter-fill score-fill" id="score-fill"></div></div>
+        </div>
+      </footer>
+    </main>
+
+    <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title">
+      <button class="close-dialog" id="close-dialog" type="button" aria-label="Close results">×</button>
+      <p class="eyebrow">FINAL APPLAUSE</p>
+      <h2 id="result-title">You kept it moving.</h2>
+      <p id="result-copy"></p>
+      <div class="final-score"><span>YOUR SCORE</span><strong id="final-score">000</strong></div>
+      <button class="primary-button" id="play-again" type="button">Run it again <span>↻</span></button>
+    </dialog>
+
+    <script src="game.js"></script>
+  </body>
+</html>
